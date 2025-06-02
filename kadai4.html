@@ -36,6 +36,11 @@
                     console.log("商品は以下の" + Item.number + "種類です。");
 
                     // 配列の内容を項目毎に出力
+                    for( let i= 0; i< items.length; i++){
+                        var item = items [i]
+                        console.log("商品番号:" + "," + "商品名:" + "金額:" + item.price + "在庫数:" + item.stock)
+                    
+                    }
                     // 課題4-1. ここにコードを書く
                     console.log(""); // 空行の出力
                 }
@@ -45,6 +50,22 @@
                     if (this.stock >= 1) { 
                         console.log("商品番号: "+this.id+", 商品名: "+this.name+"を購入します。");
                         // 課題4-2. ここにコードを書く
+
+                        for(let i = 0; i < items.length; i++){
+                            const itemArea = document.getElemntById("item_area");
+                            itemArea.innerHTML +=
+                            "<tr>" + 
+                            "<td>" + items[i].name + "</td>" +
+                            "<td>" + items[i].price + "</td>" +
+                            "<td id ='" + item_list[i].id + "'> " + items[i].stock + "</td>"  +
+                            "<td><button type='button' id = 'button" + item_list[i].id + "' >購入</button></td>" +
+                            "</tr>";
+                                                     }
+
+
+
+
+
                         // 購入による商品の在庫削減処理
                         
                         // 課題4-3. ここにコードを書く
